@@ -1,2 +1,3 @@
-# oneload64.github.io
-Web site for OneLoad64
+# 0MHz.net site
+
+Based on the [AmigaVision](https://amiga.vision) web site, which is based on the Hydra template for Jekyll. 
