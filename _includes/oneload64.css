@@ -765,10 +765,13 @@ font-weight: 600;
   .blog-post h3 a {
     color: #ddd;    
   }
+  .content {
+  background: #000;
+  }
   .content section:nth-child(odd) {
   background-color: #141414;
   }
   pre, code {
-    background-color: transparent;      
+    background-color: #222;
   }
 }
