@@ -7,6 +7,19 @@
 
 		{% seo %}
 		{% feed_meta %}
+		<meta name="keywords" content="OneLoad64 Collection, Commodore 64 launcher, C64 games collection, FPGA and emulator setup">
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "WebSite",
+		  "name": "{{ site.title | escape }}",
+		  "url": "{{ site.url }}{{ site.baseurl }}",
+		  "description": "{{ site.description | escape }}"
+		}
+		</script>
+		<link rel="preload" href="{{ site.baseurl }}/fonts/LibreBaskerville-Regular.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="{{ site.baseurl }}/fonts/LibreBaskerville-Bold.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="{{ site.baseurl }}/fonts/LibreBaskerville-Italic.woff2" as="font" type="font/woff2" crossorigin>
 
 		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
 
@@ -15,10 +28,10 @@
 		{% endcapture %}
 		<style>{{ css | scssify }}</style>
 	</head>
-	<body>
+		<body{% if page.url == '/' %} class="home-page"{% elsif page.url == '/download' or page.url == '/download/' or page.url == '/download.html' %} class="download-page"{% endif %}>
 		<header>
 			<div class="container">
-				<div class="company-name"><h1 style="margin: 0.5em 0"><a {% if page.url =='/' %} style="visibility:hidden" {% endif %} href="{{ site.baseurl }}/">OneLoad64</a></h1></div>
+				<div class="company-name"><h1 style="margin: 0.5em 0"><a href="{{ site.baseurl }}/">OneLoad64</a></h1></div>
 				{% include navigation.html %}
 			</div>
 		</header>
@@ -41,11 +54,5 @@
 			</div>
 
 		</footer>
-		<script>
-			document.getElementById("open-nav").onclick = function () {
-				document.body.classList.toggle("nav-open");
-				return false;
-			};
-		</script>
 	</body>
 </html>
